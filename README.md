@@ -1,4 +1,4 @@
-# MSC Spec Manager - Netlify Deployment
+# MSC Spec Manager - Netlify Deployment 
 
 ## Quick Deploy (5 minutes)
 
