@@ -4,7 +4,7 @@ exports.handler = async (event, context) => {
   const H = {"Content-Type":"application/json","Access-Control-Allow-Origin":"*","Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET,POST,OPTIONS"};
   if (event.httpMethod === "OPTIONS") return {statusCode:200,headers:H,body:""};
   try {
-    const store = getStore({name:"msc-data",siteID:process.env.SITE_ID,token:process.env.NETLIFY_API_TOKEN});
+    const store = getStore({name:"msc-data",siteID:process.env.MY_SITE_ID,token:process.env.MY_NETLIFY_TOKEN});
     const key = event.queryStringParameters?.key || "specs";
     if (event.httpMethod === "GET") {
       try {const d = await store.get(key);return {statusCode:200,headers:H,body:d||"{}"}} catch{return {statusCode:200,headers:H,body:"{}"}}
